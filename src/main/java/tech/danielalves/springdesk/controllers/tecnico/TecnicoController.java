@@ -52,7 +52,7 @@ public class TecnicoController {
     }
 
 
-    @GetMapping("list-tecnicos")
+    @GetMapping("/list-tecnicos")
     public ModelAndView tecnicosList(){
         ModelAndView mv = new ModelAndView("tecnico/tecnico-list");
         mv.addObject("tecnicos", tecnicoRepository.findAll());

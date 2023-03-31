@@ -24,7 +24,7 @@ public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @GetMapping("cadastro")
+    @GetMapping("/cadastro")
     public ModelAndView cadastro(Cliente cliente){
         ModelAndView mv = new ModelAndView("cliente/cadastro");
         mv.addObject("usuario", new Cliente());
@@ -50,7 +50,7 @@ public class ClienteController {
         }
     }
 
-    @GetMapping("list-clientes")
+    @GetMapping("/list-clientes")
     public ModelAndView clientesList(){
         ModelAndView mv = new ModelAndView("cliente/list-cliente");
         mv.addObject("clientes", clienteRepository.findAll());
