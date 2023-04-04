@@ -10,5 +10,6 @@ public class UserCotnroller {
     @GetMapping("/login")
     public String login(){
         return "login/login";
-    }    
+    }
+
 }

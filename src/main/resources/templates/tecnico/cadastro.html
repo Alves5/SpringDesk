@@ -28,7 +28,7 @@
             </div>
           </div>
                 <!-- conteúdo principal -->
-            <form th:action="@{/tecnico/cadastro-tecnico}" method="post" th:object="${tecnico}" enctype="multipart/form-data">
+            <form th:action="@{/cadastro-tecnico}" method="post" th:object="${tecnico}" enctype="multipart/form-data">
                 <div class="row">
                   <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                     <!-- field nome -->

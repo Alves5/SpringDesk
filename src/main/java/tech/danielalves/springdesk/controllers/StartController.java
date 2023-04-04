@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import tech.danielalves.springdesk.model.Cliente;
 import tech.danielalves.springdesk.repository.ChamadoRepository;
+import tech.danielalves.springdesk.repository.ClienteRepository;
 
 
 @Controller

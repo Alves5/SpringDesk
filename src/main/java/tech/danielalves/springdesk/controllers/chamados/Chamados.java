@@ -14,7 +14,7 @@ import tech.danielalves.springdesk.repository.ChamadoRepository;
 import tech.danielalves.springdesk.repository.TecnicoRepository;
 
 @Controller
-@RequestMapping("/ticket")
+//@RequestMapping("/ticket")
 public class Chamados {
 
     @Autowired
@@ -23,14 +23,14 @@ public class Chamados {
     @Autowired
     private ChamadoRepository chamadoRepository;
 
-    @GetMapping("home")
+    @GetMapping("/")
     public ModelAndView chamadoHome(){
         ModelAndView mv = new ModelAndView("home/index");
         return mv;
     }
 
 
-    @GetMapping("/criar")
+    @GetMapping("/cadastro-chamado")
     public ModelAndView ticket(Chamado chamado){
         ModelAndView mv = new ModelAndView("chamados/ticket");
         mv.addObject("statusChamados", StatusTicket.values());

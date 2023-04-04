@@ -18,13 +18,13 @@ import tech.danielalves.springdesk.util.PasswordUtil;
 import tech.danielalves.springdesk.util.UploadUtil;
 
 @Controller
-@RequestMapping("cliente")
+//@RequestMapping("cliente")
 public class ClienteController {
 
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @GetMapping("/cadastro")
+    @GetMapping("/cadastro-cliente")
     public ModelAndView cadastro(Cliente cliente){
         ModelAndView mv = new ModelAndView("cliente/cadastro");
         mv.addObject("usuario", new Cliente());
@@ -32,7 +32,7 @@ public class ClienteController {
         return mv;
     }
 
-    @PostMapping("/cadastro-cliente")
+    @PostMapping("/salvar-cliente")
     public ModelAndView cadastro(@ModelAttribute Cliente cliente, @RequestParam("file") MultipartFile imagem){
         ModelAndView mv = new ModelAndView("cliente/cadastro");
         mv.addObject("usuario", cliente);
@@ -57,7 +57,7 @@ public class ClienteController {
         return mv;
     }
 
-    @GetMapping("/excluir/{id}")
+    @GetMapping("/excluir-cliente/{id}")
     public String excluirCliente(@PathVariable("id") Integer id){
         clienteRepository.deleteById(id);
         return "home/index";
@@ -69,7 +69,7 @@ public class ClienteController {
         return mv;
     }
 
-    @GetMapping("/editar/{id}")
+    @GetMapping("/editar-cliente/{id}")
     public ModelAndView editar(@PathVariable("id") Integer id){
         ModelAndView mv =  new ModelAndView("cliente/editar");
         mv.addObject("perfils", Perfil.values());
@@ -83,5 +83,4 @@ public class ClienteController {
         clienteRepository.save(cliente);
         return clientesList();
     }
-    
 }

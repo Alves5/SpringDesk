@@ -47,8 +47,8 @@
                                 <td th:text="${tecs.id}"></td>
                                 <td th:text="${tecs.nome}"></td>
                                 <td th:text="${tecs.email}"></td>
-                                <td><a class="btn btn-warning" th:href="@{editar/{id}(id=${tecs.id})}">EDITAR</a>
-                                <a class="btn btn-danger" th:href="@{excluir/{id}(id=${tecs.id})}">Excluir</a></td>
+                                <td><a class="btn btn-warning" th:href="@{editar-tecnico/{id}(id=${tecs.id})}">EDITAR</a>
+                                <a class="btn btn-danger" style="pointer-events: none; cursor: default;" th:href="@{excluir-tecnico/{id}(id=${tecs.id})}">Excluir</a></td>
                               </tr>
                             </tbody>
                           </table>

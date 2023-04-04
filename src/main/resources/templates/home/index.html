@@ -40,6 +40,7 @@
                         <th scope="col">Prioridade</th>
                         <th scope="col">Status</th>
                         <th scope="col">Técnico Responsável</th>
+                        <th scope="col">Imagem</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,7 @@
                         <td th:text="${chamados.prioridade}"></td>
                         <td th:text="${chamados.status}"></td>
                         <td th:text="${chamados.tecnico.nome}"></td>
+                        <td th:text="${imagem}"></td>
                       </tr>
                       
                     </tbody>

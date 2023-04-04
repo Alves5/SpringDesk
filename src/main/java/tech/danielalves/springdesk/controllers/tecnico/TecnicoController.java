@@ -18,14 +18,14 @@ import tech.danielalves.springdesk.util.PasswordUtil;
 import tech.danielalves.springdesk.util.UploadUtil;
 
 @Controller
-@RequestMapping("/tecnico")
+//@RequestMapping("/tecnico")
 public class TecnicoController {
     
     @Autowired
     private TecnicoRepository tecnicoRepository;
 
 
-    @GetMapping("/cadastro")
+    @GetMapping("/cadastro-tecnico")
     public ModelAndView cadastro(Tecnico tecnico){
         ModelAndView mv = new ModelAndView("tecnico/cadastro");
         mv.addObject("tecnico", tecnico);
@@ -33,7 +33,7 @@ public class TecnicoController {
         return mv;
     }
 
-    @PostMapping("/cadastro-tecnico")
+    @PostMapping("/salvar-tecnico")
     public ModelAndView cadastro(@ModelAttribute Tecnico tecnico, @RequestParam("file") MultipartFile imagem){
         ModelAndView mv = new ModelAndView("tecnico/cadastro");
         mv.addObject("tecnico", tecnico);
@@ -65,7 +65,13 @@ public class TecnicoController {
         return mv;
     }
 
-    @GetMapping("/editar/{id}")
+    @GetMapping("/excluir-tecnico/{id}")
+    public String excluirTecnico(@PathVariable("id") Integer id){
+        tecnicoRepository.deleteById(id);
+        return "tecnico/tecnico-list";
+    }
+
+    @GetMapping("/editar-tecnico/{id}")
     public ModelAndView editar(@PathVariable("id") Integer id){
         ModelAndView mv =  new ModelAndView("tecnico/editar");
         mv.addObject("perfils", Perfil.values());
